@@ -131,7 +131,7 @@ st.pyplot(fig)
 
 
 def fetch_news(symbol):
-    api_key = "d13f3f1r01qs7glh6tagd13f3f1r01qs7glh6tb0"  # <- replace with your key
+    api_key = "d13f3f1r01qs7glh6tagd13f3f1r01qs7glh6tb0"  
     url = f"https://finnhub.io/api/v1/company-news?symbol={symbol}&from=2024-06-01&to=2024-06-06&token={api_key}"
     response = requests.get(url)
     if response.status_code == 200:
