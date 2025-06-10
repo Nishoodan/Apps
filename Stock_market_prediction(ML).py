@@ -57,7 +57,14 @@ model.fit(X, y)
 
 # Prediction
 last_5 = features[-5:].flatten().reshape(1, -1)
-predicted_price = model.predict(last_5)[0][:future_days]  # fix: slice to match user-selected future_days
+raw_pred = model.predict(last_5)[0]
+
+
+if future_days == 1:
+    predicted_price = [raw_pred] 
+else:
+    predicted_price = raw_pred[:future_days]  
+
 trained_prediction = model.predict(X)
 mae = mean_absolute_error(y, trained_prediction)
 current_price = data['Close'].values[-1]
