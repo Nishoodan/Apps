@@ -27,7 +27,7 @@ else:
 range_map = {
     "1 Day": 1,
     "5 Days": 5,
-    "15 Days": 30,
+    "15 Days": 15,
 }
 future_days = range_map[option]
 
